@@ -15,6 +15,13 @@ add_library(nlohmann_json_schema_validator
     src/json-validator.cpp
     src/string-format-check.cpp)
 
+
+set_target_properties(${PROJECT_NAME} PROPERTIES 
+  DEBUG_POSTFIX "d"
+  MINSIZEREL_POSTFIX "msr"
+  RELWITHDEBINFO_POSTFIX "rwdi")
+
+
 target_include_directories(nlohmann_json_schema_validator
     PUBLIC
         $<INSTALL_INTERFACE:include>
